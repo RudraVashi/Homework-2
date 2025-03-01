@@ -1,0 +1,26 @@
+<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+
+<head>
+    <title><%= recipe.name %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1><%= recipe.name %></h1>
+    <p><%= recipe.description %></p>
+
+    <h2>Ingredients</h2>
+    <ul id="ingredient-list">
+        <% recipe.ingredients
+           .split(/\s*,\s*/)
+           .map(ingredient => ingredient.trim())
+           .forEach(ingredient => { %>
+            <li class="ingredient-item"><%= ingredient %></li>
+        <% }); %>
+    </ul>
+    <script src="/javascripts/test.js"></script>
+</body>
+</html>

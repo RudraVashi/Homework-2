@@ -1,0 +1,90 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: lavenderblush ;
+}
+header {
+  background: linear-gradient(to right, #10b761, #55bcfc);
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.head1{
+  font-size: 20px;  
+  font-style: bold;
+  margin-top: 20px
+}
+
+h2{
+  background: rgb(99, 141, 189);
+  justify-content: center;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 30px;
+
+}
+
+.head3{
+  font-weight: normal;
+  
+}
+
+.header4 {
+  font-weight: bold;
+  color: white;
+  background-color: #3b454e; 
+  padding: 20px; 
+  border-radius: 5px; 
+  display: block; 
+  width: 100%; 
+  box-sizing: border-box; 
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+}
+ul a {
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+  
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+  
+nav a:hover {
+  text-decoration: underline;
+}
+
+.ingredient-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.tooltip-text {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+
+.ingredient-name:hover + .tooltip-text {
+  opacity: 1;
+  display: block;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}

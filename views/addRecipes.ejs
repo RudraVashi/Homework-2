@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add a New Recipe</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Ingredient list styles */
+        #ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .ingredient-item {
+            position: relative;
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+            background: #f8f8f8;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .ingredient-item:hover .tooltip {
+            display: block;
+        }
+
+        .tooltip {
+            display: none;
+            position: absolute;
+            background: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+    <%- include('./partials/navbar') %>
+
+    <h1>Add a New Recipe</h1>
+    <form action="/recipes/add" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" name="ingredients" required></textarea>
+
+        <!-- Dynamic ingredient list -->
+        <ul id="ingredient-list"></ul>
+
+        <label for="prep_time">Prep time:</label>
+        <textarea id="prep_time" name="prep_time" required></textarea>
+        
+        <label for="cook_time">Cook time:</label>
+        <textarea id="cook_time" name="cook_time" required></textarea>
+
+        <label for="protein_type">Protein Type:</label>
+        <select id="protein_type" name="protein_type">
+            <option value="Chicken">Chicken</option>
+            <option value="Beef">Beef</option>
+            <option value="Tofu">Tofu</option>
+            <option value="Eggs">Eggs</option>
+            <option value="Tuna">Tuna</option>
+        </select>
+
+        <button type="submit">Add Recipe</button>
+    </form>
+
+</body>
+</html>
